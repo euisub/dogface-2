@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="style.css" />
+        <script
+            class="jsbin"
+            src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"
+        ></script>
+
+        <link rel="preconnect" href="https://fonts.gstatic.com" />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.8.2/css/all.min.css"
+        />
+
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+
+        <title>개관상 테스트</title>
+
+        <!-- 네이버 -->
+
+        <meta name="title" content="개관상 테스트" />
+        <meta
+            name="description"
+            content="강아지 관상으로 보는 우리집 강아지 전생, 성격을 알아보자!"
+        />
+        <link rel="canonical" href="https://dogfacetest.netlify.app/previous.html" />
+
+        <meta name="robots" content="index,follow" />
+        <meta name="Subject" content="관상테스트" />
+
+        <meta
+            name="Keywords"
+            content="개 관상 테스트, 인공지능 개 관상 테스트, 관상, 관상 테스트, 전생, 강아지 전생, 전생 테스트, dogface"
+        />
+        <meta name="Author" content="Euisub" />
+
+        <meta name="Robots" content="ALL" />
+
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="개관상 테스트" />
+        <meta
+            property="og:description"
+            content="강아지 관상으로 보는 우리집 강아지 전생, 성격을 알아보자!"
+        />
+        <meta
+            property="og:image"
+            content="https://dogfacetest.netlify.app/previous.html/article/article1_featured_image.jpg"
+        />
+        <meta
+            property="og:url"
+            content="https://dogfacetest.netlify.app/previous.html/article/article1.html"
+        />
+
+        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:title" content="개관상 테스트" />
+        <meta
+            name="twitter:description"
+            content="강아지 관상으로 보는 우리집 강아지 전생, 성격을 알아보자!"
+        />
+        <meta name="twitter:domain" content="https://dogfacetest.netlify.app/previous.html" />
+
+
+    </head>
+    <body>
+        <div class="background-image"></div>
+        <nav class="nav-bar">
+            <a href="#" class="logo"> <span class="logo-text"> Dog Face </span></a>
+            <ul class="nav-menu">
+                <li class="nav-list">
+                    <a href="https://dogfacetest.netlify.app/" class="other-page">강아지 관상으로 전생보기</a>
+                </li>
+                <li class="nav-list">
+                    <a href="index.html" class="other-page">강아지 관상으로 성격보기</a>
+                </li>
+                <li class="nav-list">
+                    <a href="https://animalface.site/ko/index.html" class="other-page"
+                        >조코딩 동물상테스트</a
+                    >
+                </li>
+            </ul>
+            <a href="#" class="navbar__toogleBtn">
+                <i class="fas fa-bars"></i>
+            </a>
+        </nav>
+        <div class="container">
+            <!-- <div>Teachable Machine Image Model</div>
+                <button type="button" onclick="init()">Start</button>
+                <button type="button" onclick="predict()">predict</button> -->
+            <div class="title-text">
+                <h1>
+                    개관상 성격
+                </h1>
+                <p>
+                    개관상 선생이 알려주는 우지집 댕댕이 성격
+                </p>
+            </div>
+            <section class="frame-container">
+                <div class="frame">
+                    <div class="file-upload">
+                        <div class="image-upload-wrap">
+                            <input
+                                class="file-upload-input"
+                                type="file"
+                                onchange="readURL(this);"
+                                accept="image/*"
+                                alt="image-input"
+                            />
+                            <div class="drag-text">
+                                <p>
+                                    클릭 후 사진 업로드
+                                </p>
+                                <img src="photo-icon.png" class="photo-icon" alt="upload-icon" />
+                            </div>
+                        </div>
+                        <div class="file-upload-content">
+                            <div class="img-flexbox">
+                                <img
+                                    class="file-upload-image"
+                                    id="face-image"
+                                    src="#"
+                                    alt="your image"
+                                />
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div id="webcam-container"></div> -->
+                </div>
+            </section>
+
+            <div class="loading" id="loading">
+                <p class="loading-text">
+                    분석중입니다...
+                </p>
+            </div>
+            <p class="tt" id="tt">- 사용자의 사진은 어디에도 저장되지 않습니다. -</p>
+            <section class="result-container">
+                <div id="label-container" class="result-text"></div>
+                <div id="result-text" class="result-sub-text"></div>
+                <a class="file-upload-btn" id="reload-btn" href="previous.html">
+                    다른 사진도 해보기
+                </a>
+
+                <a class="btn-go" id="btn-go" href="https://dogfacetest.netlify.app/">
+                    개관상 으로 전생 알아보기
+                </a>
+            </section>
+
+            <div class="kakao-">
+                <a href="https://www.youtube.com/channel/UCQNE2JmbasNYbjGAcuBiRRg">
+                    <p style="font-size: 1.5rem;">
+                        제작도움 : 조코딩 유트브채널
+                    </p>
+                </a>
+                <!-- <ins
+                    class="kakao_ad_area"
+                    style="display: none;"
+                    data-ad-unit="DAN-tV6jVqYcj7Zzvpre"
+                    data-ad-width="320"
+                    data-ad-height="100"
+                ></ins>
+                <script
+                    type="text/javascript"
+                    src="//t1.daumcdn.net/kas/static/ba.min.js"
+                    async
+                ></script>
+                <ins
+                    class="kakao_ad_area"
+                    style="display: none;"
+                    data-ad-unit="DAN-yIDJ8wAAphBeKJgM"
+                    data-ad-width="300"
+                    data-ad-height="250"
+                ></ins>
+                <script
+                    type="text/javascript"
+                    src="//t1.daumcdn.net/kas/static/ba.min.js"
+                    async
+                ></script> -->
+            </div>
+        </div>
+
+        <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@1.3.1/dist/tf.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@teachablemachine/image@0.8/dist/teachablemachine-image.min.js"></script>
+        <script type="text/javascript">
+            const toogleBtn = document.querySelector('.navbar__toogleBtn');
+            const navMenu = document.querySelector('.nav-menu');
+            toogleBtn.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                console.log('object');
+            });
+            // More API functions here:
+            // https://github.com/googlecreativelab/teachablemachine-community/tree/master/libraries/image
+
+            // the link to your model provided by Teachable Machine export panel
+
+            //컬러
+            // const URL = 'https://teachablemachine.withgoogle.com/models/ECdsZ0m49/';
+            //흑백
+            // const URL = "https://teachablemachine.withgoogle.com/models/vhaddylao/";
+
+            //흑 + 컬러
+            const URL = 'https://teachablemachine.withgoogle.com/models/yq6ibdMlM/';
+
+            let model,
+                webcam,
+                labelContainer,
+                maxPredictions,
+                resultText,
+                loding,
+                reloadBtn,
+                tt,
+                pageGo;
+
+            function readURL(input) {
+                loading = document.getElementById('loading');
+                reloadBtn = document.getElementById('reload-btn');
+                pageGo = document.getElementById('btn-go');
+                tt = document.getElementById('tt');
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function (e) {
+                        $('.image-upload-wrap').hide();
+
+                        $('.file-upload-image').attr('src', e.target.result);
+                        $('.file-upload-content').show();
+
+                        $('.image-title').html(input.files[0].name);
+                    };
+
+                    reader.readAsDataURL(input.files[0]);
+                    loading.style.display = 'block';
+                    init().then(() => {
+                        predict();
+                        tt.style.display = 'none';
+                        loading.style.display = 'none';
+                        reloadBtn.style.display = 'block';
+                        pageGo.style.display = 'block';
+                    });
+                    //
+                } else {
+                    removeUpload();
+                }
+            }
+
+            function removeUpload() {
+                $('.file-upload-input').replaceWith($('.file-upload-input').clone());
+                $('.file-upload-content').hide();
+                $('.image-upload-wrap').show();
+            }
+            $('.image-upload-wrap').bind('dragover', function () {
+                $('.image-upload-wrap').addClass('image-dropping');
+            });
+            $('.image-upload-wrap').bind('dragleave', function () {
+                $('.image-upload-wrap').removeClass('image-dropping');
+            });
+
+            // Load the image model and setup the webcam
+            async function init() {
+                const modelURL = URL + 'model.json';
+                const metadataURL = URL + 'metadata.json';
+
+                // load the model and metadata
+                // Refer to tmImage.loadFromFiles() in the API to support files from a file picker
+                // or files from your local hard drive
+                // Note: the pose library adds "tmImage" object to your window (window.tmImage)
+                model = await tmImage.load(modelURL, metadataURL);
+                maxPredictions = model.getTotalClasses();
+                labelContainer = document.getElementById('label-container');
+                resultText = document.getElementById('result-text');
+                labelContainer.appendChild(document.createElement('div'));
+                resultText.appendChild(document.createElement('div'));
+                // for (let i = 0; i < maxPredictions; i++) {
+                //     // and class labels
+                //     labelContainer.appendChild(document.createElement('div'));
+                // }
+            }
+
+            // run the webcam image through the image model
+            async function predict() {
+                // predict can take in an image, video or canvas html element
+                var image = document.getElementById('face-image');
+                const prediction = await model.predict(image, false);
+                prediction.sort((a, b) => parseFloat(b.probability) - parseFloat(a.probability));
+                console.log(prediction[0].className);
+                console.log(prediction[0].probability);
+                var resultNum = Number(prediction[0].probability) * 100;
+                resultNum = resultNum.toFixed();
+                console.log(resultNum);
+
+                switch (prediction[0].className) {
+                    case '1':
+                        labelContainer.childNodes[0].innerHTML = '- 질투쟁이 -';
+                        resultText.childNodes[0].innerHTML =
+                            '맑고 뚜렷한 눈을 가지고 있어 자기주장이 강하고 한 고집 하는 관상입니다.<br>또한, 소유욕이 많으며 질투심이 강한 성격을 소유하고 있습니다.<br> 입꼬리가 올라가 있어 어리광이 많고,<br> 의지하는 성향이 강하기 때문에 주인과 마음이 통하지 않으면 신경질적으로 변할 수 있습니다.';
+                        break;
+                    case '2':
+                        labelContainer.childNodes[0].innerHTML = '- 호기심쟁이 -';
+                        resultText.childNodes[0].innerHTML =
+                            '앞이마와 입, 코 부분 사이의 오목한 곳이 명확하여 후각이 예민한 관상입니다.<br>  동그란 눈을 가지고 있어 호기심이 많고, 자기가 생각한 대로 행동하고<br>  소란스러운 면을 가지고 있을 수 있습니다.<br>  입꼬리가 내려가있어 낮고 크게 울리는 소리를 가지고 있습니다.';
+                        break;
+                    case '3':
+                        labelContainer.childNodes[0].innerHTML = '- 충성심 만땅 -';
+                        resultText.childNodes[0].innerHTML =
+                            '눈은 아몬드 형으로 영리하고 활발한 성격의 관상입니다.<br>  코 끝이 정면을 향하고 있어 경계심이 강해 짖고, 달려드는 것이 심할 수 있습니다.<br>  경계심이 강하다는 것은 보호자에 대한 애정과 충성심이 강하다는 뜻도 됩니다.<br>  코와 입사이가 가까워 식탐이 많아 운동을 게을리하면 비만이 되기 쉬운 관상입니다.';
+                        break;
+                    case '4':
+                        labelContainer.childNodes[0].innerHTML = '- 장난꾸러기 -';
+                        resultText.childNodes[0].innerHTML =
+                            '눈은 아몬드 형으로 영리하고 활발한 성격의 관상입니다.<br>  코 끝이 둥글어 호기심이 강해 창의적인 사고를 칠 수 있습니다.<br>  코와 입사이가 가까워 식탐이 많아 운동을 게을리하면 비만이 되기 쉬운 관상입니다<br>  활동적이며 장난치는 것을 좋아합니다.';
+                        break;
+                    case '5':
+                        labelContainer.childNodes[0].innerHTML = '- 새침데기 -';
+                        resultText.childNodes[0].innerHTML =
+                            '눈이 크고 동그란 눈으로 사람을 잘 따르는 성격이지만 낮을 좀 가립니다.<br>  자존심이 강하고 고집이 쎄다.<br>  보호자의 말을 잘 이해하지만 세침데기 같은 성격이 있어 명령조보단 칭찬을 좋아한다.';
+                        break;
+                    case '6':
+                        labelContainer.childNodes[0].innerHTML = '- 에너지 만땅 -';
+                        resultText.childNodes[0].innerHTML =
+                            '코 끝이 정면을 향해 있어 경계심이 강한 관상입니다. <br>  경계심이 강하다는 것은 보호자에 대한 애정과 충성심이 강하다는 뜻도 됩니다 <br>  눈은 아몬드 형으로 영리하며, 너무 활발하며 에너지가 넘칩니다.';
+                        break;
+                    case '7':
+                        labelContainer.childNodes[0].innerHTML = '- 기분파 -';
+                        resultText.childNodes[0].innerHTML =
+                            '눈은 크고 약간 볼록하게 보여 천진난만한 성격을 가지고 있는 관상입니다. <br>  또한, 애정을 한 사람에게만 집중시키는 경향이 있어 질투가 심한 아이입니다.<br>  자기 기분에 따라 보호자에게 어리광을 부리거나 쌀쌀 맞게 행동 할 수 있습니다.';
+                        break;
+                    case '8':
+                        labelContainer.childNodes[0].innerHTML = '- 욕심쟁이 -';
+                        resultText.childNodes[0].innerHTML =
+                            '눈은 아몬드 형으로 영리하고 활발한 성격의 관상입니다.<br>  주둥이가 짧고 뾰족해 체격에비해 당찬 성격을 가지고 있습니다.<br>  자기보다 덩치가 큰 개에게도 기죽지 않습니다.<br>  학습의욕이 높은편이고, 꼬 끝이 둥근모양으로 호기심이 많은 아이입니다.';
+                        break;
+                    case '9':
+                        labelContainer.childNodes[0].innerHTML = '- 낭랑 18세 -';
+                        resultText.childNodes[0].innerHTML =
+                            '코가 둥글고 넒은 모양을 하고 있어 공격적인 성격이 거의 없고, 다정하고 명량한 성격의 소유자 입니다.<br>  뚜렷한 눈을 가지고 있어 자기주장이 강하며 무언가에 지나치게 열중할 수 있습니다.';
+                        break;
+                    case '10':
+                        labelContainer.childNodes[0].innerHTML = '- 귀여움 속에 숨은 악 -';
+                        resultText.childNodes[0].innerHTML =
+                            '눈은 둥글고 어두운 색으로 총명하고 쾌활하지만 다소 소란스러울 수 있는 관상입니다.<br>  귀엽다고 응석을 다 받아주게 되면 공격적인 강아지가 될 수 있습니다.';
+                        break;
+                    case '11':
+                        labelContainer.childNodes[0].innerHTML = '- 어리광 쟁이 -';
+                        resultText.childNodes[0].innerHTML =
+                            '맑고 뚜렷한 눈을 가지고 있어 자기주장이 강하고 고집이 다소 쎈 관상입니다.<br>  눈 모양은 둥근 모양으로 애교가 많은 아이입니다.<br>  헛짖음이 많고 대드는 경향이 있지만 붙임성이 좋아 금방 친해질 수 있는 아이입니다.<br>  자신이 귀여운 걸 알고 있어 잘못을 해도 어리광으로 넘어가려고 하는 성격의 소유자입니다.';
+                        break;
+                    case '12':
+                        labelContainer.childNodes[0].innerHTML = '- 활발한 개구쟁이 -';
+                        resultText.childNodes[0].innerHTML =
+                            '눈은 크고 둥근 모양으로 애교가 많으며 상냥한 성격을 소유하고 있습니다.<br>  감수성이 풍부하며 보호자의 희로애락을 민감하게 알아차리고 맞춰주는 영리함을 가지고 있습니다.<br>  하지만, 보호자와 신뢰관계가 깨지게 되면 다소 날카로운 면이 있습니다.';
+                        break;
+                    case '13':
+                        labelContainer.childNodes[0].innerHTML = '- 용감한 전사 -';
+                        resultText.childNodes[0].innerHTML =
+                            '맑고 뚜렷한 눈을 가지고 있어 자기주장이 강하고 고집이 다소 쎈 관상입니다.<br>  눈썹에 점이 있어 귀신을 쫒아내는 용감함을 가지고 있는 아이입니다.<br>  코 끝이 정면을 향해 있어 경계심이 강한 관상입니다.<br>  경계심이 강하다는 것은 보호자에 대한 애정과 충성심이 강하다는 뜻도 됩니다.';
+                        break;
+                    case '14':
+                        labelContainer.childNodes[0].innerHTML = '- 혼자도 외롭지 않아 -';
+                        resultText.childNodes[0].innerHTML =
+                            '눈이 크고 둥글며 동출돼 있어 독립성이 강하고 용감한 아이입니다.<br>  코의 길이가 짧고 폭이 넓어 코골이가 심할 수 있습니다.<br>  두 귀와 눈 사이가 벌어져 있어 활발함과는 거리가 있지만 <br>  상냥하고, 애정이 많은 아이 입니다.';
+                        break;
+                    case '15':
+                        labelContainer.childNodes[0].innerHTML =
+                            '- 나 무서워 하지마 ... 알고보면 다정함 -';
+                        resultText.childNodes[0].innerHTML =
+                            '코가 위로 벌어져 있어 코골이가 심한 관상입니다.<br>  주둥이가 매우 짧아 참을성이 많고 침착하며 온순한 성격을 가지고 있습니다.<br>  다만 화가 났을 땐 매우 무서워짐으로 평소 기초적인 훈련이 필요합니다.<br>  귀는 머리 윗부분에 위치하며 작고 얇아 보호자의 애정을 갈구하는 성향을 가지고 있습니다.<br>  눈은 동그란 모양을 가지고 있어 어리광이 많은 아이입니다.';
+                        break;
+                    case '16':
+                        labelContainer.childNodes[0].innerHTML = '- 낭랑 18 세 -';
+                        resultText.childNodes[0].innerHTML =
+                            '미간이 넓고 코가 둥근모양으로 능동적이고 명량한 성격을 가지고 있습니다.<br>  사람들과 장난치기를 좋아하며, 지능이 높아 눈치가 빠른 아이입니다.<br>  콧구멍이 넓어 후각이 발달되어 있고, 경계심이 비교적 없는 아이입니다.';
+                        break;
+                    case '17':
+                        labelContainer.childNodes[0].innerHTML = '- 애교쟁이 -';
+                        resultText.childNodes[0].innerHTML =
+                            '눈은 크고 둥근 모양으로 애교가 많으며 상냥한 성격을 소유하고 있습니다.<br>  코 끝이 약간 둥근모양으로 호기심이 많으며, 코 끝이 앞을 향하고 있어 경계심이 있는 편입니다.<br>  코와 입사이가 가까워 식탐이 많아 운동을 게을리하면 비만이 되기 쉬운 관상입니다.';
+                        break;
+                    case '18':
+                        labelContainer.childNodes[0].innerHTML = '- 똑똑한 개구쟁이 -';
+                        resultText.childNodes[0].innerHTML =
+                            '귀가 반만 쫑긋 세워져 있어 천진난만하고 사람을 잘 따르며, 지능이 높은 아이입니다.<br>  코 끝이 둥근모양으로 호기심이 많으며 활발한 성격을 가지고 있습니다.<br>  눈은 아치형으로 스트레스를 받으면 신경질적이고 파괴적인 성격으로 변할 수 있습니다.<br>  활동량이 엄청나 다소 소란스러울 수 있습니다.';
+                        break;
+                    case '19':
+                        labelContainer.childNodes[0].innerHTML = '- 천사와 악마 -';
+                        resultText.childNodes[0].innerHTML =
+                            '눈은 아치형으로 스트레스를 받으면 신경질적이고 파괴적인 성격으로 변할 수 있는 관상입니다.<br>  자존심이 강해 억지스러운 지시에는 반항하며 낮선 사람을 경계하고 독립심이 강한 아이입니다.<br>  보호자와 신뢰를 쌓게되면 깊은 애정과 충성심을 나타내며 인내심이 강하지만 <br>  어느 곳에서든 싸움상대를 고르기 때문에 싸운상대로 인식되면 다소 피곤해 질 수 있습니다.';
+                        break;
+                    case '20':
+                        labelContainer.childNodes[0].innerHTML = '- 똥고발랄 -';
+                        resultText.childNodes[0].innerHTML =
+                            '입꼬리가 올라가있어 외로움을 많이 타고 어리광이 많은 관상입니다.<br>  눈은 깊고 우묵하여 천진난만한 장난꾸러기 입니다.<br>  평화주의자이며 보호자에게 충실하며 사람을 잘 따르는 아이입니다.<br>  지능이 높아 사람을 말을 잘 이해하나 장난치는 것을 좋아해서 훈련이 다소 힘들 수 있습니다.';
+                        break;
+                    case '21':
+                        labelContainer.childNodes[0].innerHTML = '- 예민한 전사 -';
+                        resultText.childNodes[0].innerHTML =
+                            '주둥이가 뾰족하여 총명하고 용감한 관상입니다.<br>  귀가 뾰족하여 쾌활한 성격을 가지고 있으며, 활동적이고 장난치며 노는것을 좋아하는 아이입니다.<br>  코 끝이 정면 아래를 향하고 있어 경계심이 강하고, 예민한 성격의 소유자 입니다.<br>  입꼬리가 올라가있어 외로움을 많이 타고 어리광이 많은 관상입니다.';
+                        break;
+                    case '22':
+                        labelContainer.childNodes[0].innerHTML =
+                            '- 나 버리지마...끝까지 찾을거야 -';
+                        resultText.childNodes[0].innerHTML =
+                            '귀가 앞으로 약간 경사지면서 곧게 서있어 보호자에 대한 충성심과 복종심이 강하며, 귀가성이 뛰어난 관상입니다.<br>  얼굴형이 팔각형이며, 주둥이가 뾰족하여 용감하고 강한 경계심을 가지고 있습니다.<br>  눈꼬리는 약간 치켜 올라가 있는 모양으로 한 번 물면 놓지 않는 지독한 근성을 가지고 있는 아이입니다.';
+                        break;
+                    case '23':
+                        labelContainer.childNodes[0].innerHTML = '- 영리함과 우둔한의 사이 -';
+                        resultText.childNodes[0].innerHTML =
+                            '눈은 아몬드 형으로 영리하고 활발한 성격의 관상입니다.<br>  학습능력이 뛰어나며, 친절하고 외향적인 성향을 가지고 있습니다.<br>  입꼬리가 올라가 있어 외로움을 많이 타고 어리광이 많은 아이입니다.';
+                        break;
+                    case '24':
+                        labelContainer.childNodes[0].innerHTML = '- 영리함과 책임감 만땅 -';
+                        resultText.childNodes[0].innerHTML =
+                            '눈은 약간 처진 아몬드 모양으로 머리가 좋고 책임감을 가지고 있는 관상입니다.<br>  귀는 삼각형으로 곧게 서 있어 충성심이 강하고, 용감한 아이입니다.<br>  보호자와 신뢰를 쌓는기간에 보호자의 부족한 모습이 보이면 신경질적이고 공격적인 성향을 보일 수 있습니다.';
+                        break;
+                    case '25':
+                        labelContainer.childNodes[0].innerHTML = '- 영리함과 우둔한의 사이 -';
+                        resultText.childNodes[0].innerHTML =
+                            '눈은 약간 둥근 아몬드형으로 지능이 높고 애교가 많은 관상입니다.<br>  코 끝이 둥근모양으로 호기심이 많아 창의적인 사고를 칠 수 있습니다.<br>  입꼬리가 올라가 있어 외로움을 많이 타고 어리광이 많은 아이입니다.<br>  기본적으로 착하고 상냥한 성격을 소유하고있으며, 보호자에 대한 애정이 깊고 충성심이 있습니다.';
+                        break;
+                    case '26':
+                        labelContainer.childNodes[0].innerHTML = '- 용감한 전사 -';
+                        resultText.childNodes[0].innerHTML =
+                            '눈 위에 점이 있으며 귀신을 쫒는 용감함을 가지고 있는 관상입니다.<br>  코 끝이 정면 아래를 향하고 있어 경계심이 강하고 충성심이 높아 <br>  보호자를 지키기위해 다소 사나워 질 수 있습니다.<br>  눈은 둥근모양으로 애교가 많으며 어리광이 많은 아이입니다.';
+                        break;
+                    case '27':
+                        labelContainer.childNodes[0].innerHTML = '- 잘삐짐 -';
+                        resultText.childNodes[0].innerHTML =
+                            '눈꼬리가 약간 올라간 아몬드형으로 낙천적이며, 활동적이고 쾌환한 성격을 가지고 있는 관상입니다.<br>  입꼬리가 올라가 있어 외로움을 많이 타고 어리광이 많은 아이입니다.<br>  적절한 관심을 받지 못하면 쉽게 삐질 수 있습니다.';
+                        break;
+                    case '28':
+                        labelContainer.childNodes[0].innerHTML = '- 평화주의자 -';
+                        resultText.childNodes[0].innerHTML =
+                            '주둥이와 머리는 길고 귀는 작으며 곧게 서있어 인내심이 강하고 우호적이며 온순한 성향을 가진 관상입니다.<br>  또한, 운동능력과 학습능력이 뛰어난 아이입니다.';
+                        break;
+                    case '29':
+                        labelContainer.childNodes[0].innerHTML = '- 내성적 이지만 할건 다함 -';
+                        resultText.childNodes[0].innerHTML =
+                            '눈은 아몬드 형으로 지능이 높은 아이입니다.<br>  주둥이와 머리는 길고 귀는 작으며 곧게 서있어 인내심이 강하고 우호적이며 온순한 성향을 가진 관상입니다.<br>  코 끝이 정면 아래를 바라보고 있어 경계심이 강합니다.<br>  입꼬리가 살짝 내려가 있어 보호자와 신뢰관계를 쌓지 못하면 다소 말을 안 들을 수 있습니다.';
+                        break;
+                    case '30':
+                        labelContainer.childNodes[0].innerHTML = '- 생기발랄 -';
+                        resultText.childNodes[0].innerHTML =
+                            '코 끝이 정면 아래를 향하고 있어 경계심이 강한 관상입니다.<br>  또한, 코 끝이 둥근모양으로 호기심이 많고 놀기 좋아하는 아이입니다.<br>  입꼬리가 올라가 있어 외로움을 많이 타고 어리광이 많은 아이입니다.';
+                        break;
+                    case '31':
+                        labelContainer.childNodes[0].innerHTML = '- 게으름쟁이 -';
+                        resultText.childNodes[0].innerHTML =
+                            '눈은 작고 둥근모양으로 상냥하고 온순한 성향을 가지고 있습니다.<br>  귀는 약간 동그스름한데 v자형으로 늘어져 있어 고집을 부리기도 하고 제멋대로 성향이 있습니다.<br>  운동하는 것을 귀찮아하며, 마음에 드는 장소에서 느긋하게 지내는 것을 좋아합니다.';
+                        break;
+                    case '32':
+                        labelContainer.childNodes[0].innerHTML = '- 장난꾸러기 -';
+                        resultText.childNodes[0].innerHTML =
+                            '맑고 뚜렷한 눈을 가지고 있어 자기주장이 강하고 고집이 쎈 관상입니다.<br>  장난치는것을 좋아하며 제멋대로인 면이있습니다.<br>  눈은 둥근모양으로 활발하며 애교가 많은 아이입니다.<br>  코 끝이 둥근모양으로 호기심이 많으며 주인에 대한 애정이 많은 아이입니다.';
+                        break;
+                    case '51':
+                        labelContainer.childNodes[0].innerHTML = '- 고양이 아닌가요? -';
+                        resultText.childNodes[0].innerHTML =
+                            '강아지 보단 고양이로 보이는 관상입니다. 다른사진으로 테스트 해주세요.';
+                        break;
+                    case '52':
+                        labelContainer.childNodes[0].innerHTML = '- 사람 아닌가요? -';
+                        resultText.childNodes[0].innerHTML =
+                            '강아지 보단 사람으로 보이는 관상입니다. 다른사진으로 테스트 해주세요.';
+                        break;
+                    case '53':
+                        labelContainer.childNodes[0].innerHTML = '- 뭘까요? -';
+                        resultText.childNodes[0].innerHTML =
+                            '강아지 관상이 아닌거 같습니다. 다른사진으로 테스트 해주세요.';
+                        break;
+                }
+            }
+            // for (let i = 0; i < maxPredictions; i++) {
+            //     const classPrediction =
+            //         prediction[i].className + ': ' + prediction[i].probability.toFixed(2);
+            //     labelContainer.childNodes[i].innerHTML = classPrediction;
+            // }
+        </script>
+    </body>
+    <!-- Copyright (c) 2021 by Aaron Vanston (https://codepen.io/aaronvanston/pen/yNYOXR)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE. -->
+</html>
