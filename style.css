@@ -2,7 +2,7 @@ body {
   /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
   font-family: "Yeon Sung", cursive;
   font-size: 16px;
-  background-color: #f2f2f2;
+  background-color: #F0F0F0;
   /* overflow: hidden; */
   margin: 0;
   padding: 0;
@@ -33,6 +33,7 @@ ul {
     align-items:center;
     text-align:center;
     margin-top: 20px;
+    margin-bottom: 50px;
 }
 
 .kakao- ins{
@@ -72,10 +73,6 @@ ul {
   /* border: 1px solid black; */
 }
 
-.nav-list:hover {
-  background-color: #faf9ed;
-  font-size: 1.5rem;
-}
 
 .face {
   position: absolute;
@@ -91,18 +88,31 @@ ul {
   color: #053c31;
 }
 
-.background-image {
-  position: absolute;
-  width: 100%;
-  height: 200%;
-  background: url(background.png) no-repeat center center;
-  background-size: cover;
-}
-
 .nav-bar {
   width: 100%;
-  position: relative;
-  justify-content: space-between;
+  display: flex;
+justify-content: center;
+    align-items: center;
+  padding: 1em;
+    font-family: 'Jua', sans-serif;
+}
+
+.ul-content{
+    display: flex;
+}
+
+.ul-content >li{
+    box-sizing: none;
+    
+}
+
+.ul-content >li >a{
+    padding: 1em;
+    border: 1px solid #F0F0F0;
+}
+
+.ul-content >li>a:hover{
+    border: 1px solid black;
 }
 
 .container {
@@ -300,7 +310,7 @@ ul {
   text-align: center;
   margin: 0 auto;
   padding: 0;
-  top: 43%;
+  top: 32%;
   align-self: center;
   animation-duration: 1s;
   animation-name: slidein;
@@ -350,4 +360,8 @@ ul {
     text-align: left;
     font-size: 1.2rem;
   }
+    
+        .ul-content{
+        display: none;
+    }
 }
